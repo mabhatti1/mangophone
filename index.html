@@ -8,21 +8,30 @@
 
         <body>
             <h1><strong>Mango Phone Shop</strong></h1>
-            <section>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2tgvaxuuih-slMBisjZfPT7egtAsFHfLhwA&usqp=CAU" alt="banner" width="900" height="396">
+
+            <nav>
+                <ul>
+                    <li><a href="#Best selling items of 2021">Best selling items of 2021</a></li>
+                    <li><a href="#subscriptions">Subscriptions</a></li>
+                </ul>
+            </nav>
+            <section id= "Best selling items of 2021">
                 <h2> Best selling items of 2021</h2>
                 <p>
-                    This year we sold a lot of phones and accesoires. Your favourite phones where the:
-                    <ul>
-                        <li>iPhone 13</li>
-                        <li>Samsung Galaxy s21</li>
-                        <li>Samsung Galaxy A12</li>
-                        <li>iPhone 12 Pro Max</li>
-                        <li>iPhone 11</li>
-                    </ul>
+                    Looking for a phone, but can't decide what to buy? Let us help you! In the following table we listed the most popular phones of this year with the following specifications:
+                    <ol>
+                        <li>Brand name</li>
+                        <li>Model</li>
+                        <li>Operating system</li>
+                        <li>Screensize</li>
+                        <li>Image</li>
+                    </ol>
                 </p>
                 <p>To look back at the previous year we listed the top 5 most sold smart phones of the year 2021, in the next table.</p>
                 <table>
                     <caption><strong>Best sellers</strong></caption>
+                <thead>
                     <tr>
                         <th>brand</th>
                         <th>model</th>
@@ -30,6 +39,8 @@
                         <th>screensize</th>
                         <th>image</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <td>Apple</td>
                         <td>iPhone 13</td>
@@ -90,28 +101,74 @@
                         </td>
                     </tr>
                     <tr>
-                        <form action="https://wt.ops.labs.vu.nl/api22/9470b950" method="post">
+                        <form action="https://wt.ops.labs.vu.nl/api22/9470b950" method="post" target="_blank">
                             <td>
-                                <input type="text" name="brand" id="brand">
+                                <input type="text" name="brand" id="brand" required>
                             </td>
                             <td>
-                                <input type="text" name="model" id="model">
+                                <input type="text" name="model" id="model" required>
                             </td>
                             <td>
-                                <input type="text" name="os" id="os">
+                                <input type="text" name="os" id="os" required>
                             </td>
                             <td>
-                                <input type="number" name="screensize" id="screensize">
+                                <input type="number" name="screensize" id="screensize" required>
                             </td>
                             <td>
                                 <figure>
-                                    <input type="url" name="image" id="image">
+                                    <input type="url" name="image" id="image" required>
                                     <input type="submit">
                                 </figure>
                             </td>
                             
                         </form>
                     </tr>
+                </tbody>
+                </table>
+            </section>
+            <section id="subscriptions">
+                <h2>Subscriptions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            <th>Total costs</th>
+                            <th>One time payment</th>
+                            <th>Total credit amount</th>
+                            <th>Installment amount</th>
+                            <th>Duration agreement</th>
+                            <th>Interest</th>
+                        </tr>   
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>iPhone 13</td>
+                            <td>&euro;800,00</td>
+                            <td>&euro;0,00</td>
+                            <td>&euro;800,00</td>
+                            <td>&euro;36,00</td>
+                            <td>24 months</td>
+                            <td>0%</td>
+                        </tr> 
+                        <tr>
+                            <td>iPhone 11</td>
+                            <td>&euro;528,00</td>
+                            <td>&euro;0,00</td>
+                            <td>&euro;528,00</td>
+                            <td>&euro;22,00</td>
+                            <td>24 months</td>
+                            <td>0%</td> 
+                        </tr>
+                        <tr>
+                            <td>Samsung Galaxy s21</td>
+                            <td>&euro;576,00</td>
+                            <td>&euro;0,00</td>
+                            <td>&euro;576,00</td>
+                            <td>&euro;24,00</td>
+                            <td>24 months</td>
+                            <td>0%</td>
+                        </tr>
+                    </tbody>
                 </table>
             </section>
         </body> 
