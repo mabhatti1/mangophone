@@ -1,3 +1,26 @@
 html{
-    font-family: sans-serif;
+    font-family: verdana;
+    font-size: 16px;
+    margin-left: 20px;
+    text-align: justify;
+    
+}
+h1{
+    margin: 40px 20px;
+    padding: 20px 50px 40px;
+    border: 5px groove orange;
+    background-color: rgba(239, 151, 11, 0.9); 
+}
+h2{
+ margin-top: 10px;    
+ margin-bottom: 20px;
+}
+#brand{
+    font-style: italic; 
+}
+table, th, td{
+    border: 2px solid black;
+}
+figure{
+    text-align: center;
 }
