@@ -20,6 +20,9 @@ h2{
  color: white;
  text-align: center;
 }
+p em{
+    font-weight: bold;
+}
 #brand{
     font-style: italic; 
 }
@@ -31,6 +34,9 @@ table, th, td{
 }
 table thead{
     background-color: rgba(239, 151, 11, 0.9);
+}
+#STable{
+    border-spacing: 5px;
 }
 figure{
     text-align: center;
@@ -49,6 +55,10 @@ figure{
 }
 #navbar ul li{
     display: inline;
+    border-style: outset;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: white;
 }
 #navbar ul li a{
     text-decoration: none;
