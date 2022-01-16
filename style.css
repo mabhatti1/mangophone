@@ -8,7 +8,7 @@ html{
 h1{
     grid-area: h1;
     margin: 40px 20px 0px;
-    padding: 20px 50px 50px;
+    padding: 20px 50px 40px;
     border-radius: 10px;
     background-color: rgba(239, 151, 11, 0.9);
     color: white;
@@ -18,7 +18,6 @@ h1{
 h1 img{
     float: left;
     margin: 5px;
-    vertical-align: default;
 }
 h2{
     grid-area:h2 ;
@@ -35,21 +34,10 @@ h2{
 .maintxt{
     grid-area: main;
     margin: 5rem auto;
-    width: 50%
-}
-a:link{
-  font: italic Georgia, serif;
-  color: blue;
-}
-a:visited{
-    color: purple;
-}
-a:active{
-    background-color: orange;
+    
 }
 #table1 {
     grid-area: t1;
-    caption-side: top;
 }
 table, th, td{
     border: 2px solid rgba(239, 151, 11, 0.9);
@@ -59,9 +47,6 @@ table, th, td{
 }
 table thead{
     background-color: rgba(239, 151, 11, 0.9);
-}
-input:focus{
-    background-color: orange;
 }
 figure{
     grid-area: figure;
@@ -90,12 +75,11 @@ figure{
 
 #navbar ul li{
     display: inline;
-    margin-top: 100px;
 }
 
 #navbar ul li a{
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: .2em 1em;
     font-family: Arial;
     background-color: rgba(239, 151, 11, 0.9);
@@ -146,3 +130,42 @@ figure{
 
      }
  }
+
+ @media print {
+    body{
+        font-family: "Britannic Bold";
+        font-size: 14px;
+    }
+    nav{
+      display: none;
+      
+    }
+    #table1 {
+        page-break-before: always;
+        page-break-after: always;
+        transform: scale(0.6); 
+        
+            
+    }
+    #subscriptions{
+        page-break-before: always;
+        transform: scale(0.7);      
+
+    }
+
+    .main{
+        orphans: 4;
+        widows: 4;
+        transform: scale(0.5);
+
+    }
+    .foot{
+        orphans: 2;
+        widows: 2;
+        transform: scale(0.5);
+
+    }
+
+  }
+  
+  
