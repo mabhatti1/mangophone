@@ -1,9 +1,10 @@
-/*body {
+html{
     font-family: verdana;
     font-size: 16px;
-    margin-left: auto;
+    font-variant: initial;
+    margin-left: 20px;
+}
 
- } */
 h1{
     grid-area: h1;
     margin: 40px 20px 0px;
@@ -12,6 +13,11 @@ h1{
     background-color: rgba(239, 151, 11, 0.9);
     color: white;
     text-align: center;
+    display: inline-block;
+}
+h1 img{
+    float: left;
+    margin: 5px;
 }
 h2{
     grid-area: h2;
@@ -83,7 +89,7 @@ figure{
 }
 
 /*Phone/Tablet*/
-@media all and (min-width: 100px) {
+@media screen and (max-width: 620px) {
     body {         
        grid-template-columns: 50 auto;
        grid-template-rows: 20 auto 20 20; 
@@ -96,15 +102,3 @@ figure{
          
     }
  }
-
- /*@media all and (min-width: 800px) {
-    body {         
-       grid-template-columns: 200px auto 200px;
-       grid-template-rows: 50px 300px 50px; 
-       grid-template-areas: 
-          "head head head" 
-          "nav main aside"
-          "foot foot foot";
-    }
-}
-*/
