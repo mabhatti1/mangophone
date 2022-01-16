@@ -1,11 +1,11 @@
-html{
+/*body {
     font-family: verdana;
     font-size: 16px;
-    font-variant: initial;
-    margin-left: 20px;
-}
+    margin-left: auto;
 
+ } */
 h1{
+    grid-area: h1;
     margin: 40px 20px 0px;
     padding: 20px 50px 40px;
     border-radius: 10px;
@@ -14,27 +14,27 @@ h1{
     text-align: center;
 }
 h2{
- margin-top:50px;
- margin-bottom: 30px;
- padding: 20px 50px 30px;
- border-radius: 5px;
- background-color: rgba(239, 151, 11, 0.9);
- color: white;
- text-align: center;
-}
-ol li{
-    background: rgb(252, 166, 86);
-    padding: 5px;
-    list-style-position: inside;
-}
-p em{
-    font-weight: bold;
+    grid-area: h2;
+    margin-top:50px;
+    margin-bottom: 30px;
+    padding: 20px 50px 30px;
+    border-radius: 5px;
+    background-color: rgba(239, 151, 11, 0.9);
+    color: white;
+    text-align: center;
 }
 #brand{
     font-style: italic; 
 }
+
+.maintxt{
+    grid-area: main;
+    margin: 5rem auto;
+    width: 50%
+}
 table, th, td{
-    border: 2px solid black;
+    grid-area: table1;
+    border: 2px solid rgba(239, 151, 11, 0.9);
     text-align: center;
     margin-left:auto;
     margin-right:auto;
@@ -42,30 +42,25 @@ table, th, td{
 table thead{
     background-color: rgba(239, 151, 11, 0.9);
 }
-#STable{
-    border-spacing: 5px;
-}
 figure{
+    grid-area: figure;
     text-align: center;
 }
-#center{
+.center{
     text-align: center;
 }
-#navbar ul{
-    background-color: rgba(239, 151, 11, 0.9);;
-    padding: 5px;
+.navbar ul{
+    grid-area: nav;
+    background-color: white;
+    padding: 0px;
     list-style-type: none;
     margin-top: 0px;
     margin-left: 500px;
     margin-right: 500px;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 #navbar ul li{
     display: inline;
-    border-style: outset;
-    border-width: 3px;
-    border-radius: 5px;
-    border-color: white;
 }
 #navbar ul li a{
     text-decoration: none;
@@ -79,8 +74,37 @@ figure{
     color:rgba(239, 151, 11, 0.9);
     background-color: white;
 }
-#footer{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCCO2CKqyGF_lwUnzCMXAMp9BV4iWyqFzYw&usqp=CAU");
-    background-repeat: repeat;
+.foot{
+    grid-area: foot;
+    background-color: rgba(239, 151, 11, 0.9);
     display: inline;
+    margin: 5rem auto;
+    text-align: center;
 }
+
+/*Phone/Tablet*/
+@media all and (min-width: 100px) {
+    body {         
+       grid-template-columns: 50 auto;
+       grid-template-rows: 20 auto 20 20; 
+       grid-template-areas:
+          "h1 h2"
+          "main table1"
+          "figure1 nav"
+          "foot foot";        
+
+         
+    }
+ }
+
+ /*@media all and (min-width: 800px) {
+    body {         
+       grid-template-columns: 200px auto 200px;
+       grid-template-rows: 50px 300px 50px; 
+       grid-template-areas: 
+          "head head head" 
+          "nav main aside"
+          "foot foot foot";
+    }
+}
+*/
