@@ -169,7 +169,7 @@ pre {
 
      }
  }
- @media print {
+ @media print and (orientation: portrait) {
     body{
         font-family: "Britannic Bold";
         font-size: 14px;
@@ -181,7 +181,7 @@ pre {
     #table1 {
         page-break-before: always;
         page-break-after: always;
-        transform: scale(0.6); 
+        transform: scale(1.0); 
         
             
     }
@@ -201,4 +201,41 @@ pre {
         transform: scale(0.5);
     }
 
+  }
+
+  @media print and (orientation: landscape) {
+    body{
+        font-family: "Britannic Bold";
+        font-size: 14px;
+    }
+    nav{
+      display: none;
+      
+    }
+    #table1 {
+        page-break-before: always;
+        page-break-after: always;
+        transform: scale(0.4); 
+        margin-top: -30%;       
+    }
+    #subscriptions{
+        page-break-before: always;
+        transform: scale(0.7);  
+        margin-top: -70%;    
+
+    }
+    .maintxt{
+        orphans: 4;
+        widows: 4;
+        transform: scale(1.0);
+    }
+    .foot{
+        orphans: 2;
+        widows: 2;
+        transform: scale(0.5);
+        margin-top: -70%;
+    }
+    h1{
+         display: none;
+     }
   }
