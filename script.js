@@ -1,9 +1,9 @@
 $(document).ready(function(){
-var table = $('table');
+var table = $("table");
 
-$('th.sortable').click(function(){
-    var table = $(this).parents('table').eq(0);
-    var ths = table.find('tr:gt(0)').toArray().sort(compare($(this).index()));
+$("th.sortable").click(function(){
+    var table = $(this).parents("table").eq(0);
+    var ths = table.find("tr:gt(0)").toArray().sort(compare($(this).index()));
     this.asc = !this.asc;
     if (!this.asc)
        ths = ths.reverse();
@@ -20,7 +20,12 @@ function compare(idx) {
 }
 
 function tableCell(tr, index){ 
-    return $(tr).children('td').eq(index).text() 
+    return $(tr).children("td").eq(index).text() 
 }
 });
 //https://stackoverflow.com/questions/3160277/jquery-table-sort
+
+$("button.reset").click(function(){
+$.get("https://wt.ops.labs.vu.nl/api22/9470b950/reset", function(data){
+    console.log("succes");
+} ,"json")});
