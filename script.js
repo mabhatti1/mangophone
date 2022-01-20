@@ -31,7 +31,36 @@ $("button.reset").click(function(){
         dataType: "json"
      })
     })
+//task 3
+const formEl = document.querySelector("form");
+const tbodyEl= document.querySelector("tbody");
+$.ajax({
+    url: "https://wt.ops.labs.vu.nl/api22/9470b950",
+    method: "GET",
+    data: brand, model, os, screensize, image,
+    dataType: "json"
 });
+function addRow(event){
+    event.preventDefault();
+    const brand= data.brand;
+    const model=data.model;
+    const os=data.os;
+    const screensize=data.screensize;
+    const image=data.image;
+    
+    tbodyEl.innerHTML += `
+        <tr>
+            <td>${brand}</td>
+            <td>${model}</td>
+            <td>${os}</td>
+            <td>${screensize}</td>
+            <td>${image}</td>
+        </tr>
+    `
+}
+formEl.addEventListener("submit", addRow);
+});
+
 
 //https://stackoverflow.com/questions/3160277/jquery-table-sort
 
