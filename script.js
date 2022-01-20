@@ -1,4 +1,5 @@
 $(document).ready(function(){
+//task1
 var table = $("table");
 
 $("th.sortable").click(function(){
@@ -22,10 +23,15 @@ function compare(idx) {
 function tableCell(tr, index){ 
     return $(tr).children("td").eq(index).text() 
 }
+//task2
+$("button.reset").click(function(){
+    $.ajax({
+        url: "https://wt.ops.labs.vu.nl/api22/9470b950/reset",
+        method: "GET",
+        dataType: "json"
+     })
+    })
 });
+
 //https://stackoverflow.com/questions/3160277/jquery-table-sort
 
-$("button.reset").click(function(){
-$.get("https://wt.ops.labs.vu.nl/api22/9470b950/reset", function(data){
-    console.log("succes");
-} ,"json")});
