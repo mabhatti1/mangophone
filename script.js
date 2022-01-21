@@ -46,13 +46,13 @@ var requestData = {
     screensize: parseFloat(screensize),
     image: image
 };
-console.log(requestData);
 $.ajax({
     url: "https://wt.ops.labs.vu.nl/api22/9470b950",
     method: "GET",
-    data: requestData,
+    data: JSON.stringify(requestData),
     dataType: "json",
 });
+console.log(requestData);
 function addRow(event){
    //event.preventDefault();
    /*
