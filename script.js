@@ -34,12 +34,24 @@ $("button.reset").click(function(){
 //task 3
 const formEl = document.querySelector("form");
 const tbodyEl= document.querySelector("tbody");
-let requestData= [$("#brand").val(), $("#model").val(),$("#os").val(),$("#image").val(),$("#screensize").val()];
+var brand = $("#brand").val();
+var model = $("#model").val();
+var os = $("#os").val();
+var screensize = $("#screensize").val();
+var image = $("#image").val();
+var requestData = {
+    brand: brand,
+    model: model,
+    os: os,
+    screensize: parseFloat(screensize),
+    image: image
+};
+console.log(requestData);
 $.ajax({
     url: "https://wt.ops.labs.vu.nl/api22/9470b950",
     method: "GET",
     data: requestData,
-    dataType: "json"
+    dataType: "json",
 });
 function addRow(event){
    //event.preventDefault();
@@ -55,8 +67,8 @@ function addRow(event){
             <td>${requestData[0]}</td>
             <td>${requestData[1]}</td>
             <td>${requestData[2]}</td>
-            <td>${requestData[4]}</td>
             <td>${requestData[3]}</td>
+            <td>${requestData[4]}</td>
         </tr>
     `
     ;}
