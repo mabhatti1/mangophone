@@ -44,6 +44,7 @@
             <p>To look back at the previous year we listed the top 5 most sold smart phones of the year <em>2021</em>, in the next table.</p>
             <form action="https://wt.ops.labs.vu.nl/api22/9470b950" method="post" target="_blank" id= "my_form"></form>
         </div>
+            <button id= "btn">GET</button>
             <table id ="table1">
                 <caption><strong>Best sellers</strong></caption>
             <thead>
@@ -55,7 +56,7 @@
                     <th>image</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tdata">
                 <tr>
                     <td>
                         <input type="text" name="brand" id="brand" form="my_form" required>

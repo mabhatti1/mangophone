@@ -32,48 +32,31 @@ $("button.reset").click(function(){
      })
     })
 //task 3
-const formEl = document.querySelector("form");
-const tbodyEl= document.querySelector("tbody");
-var brand = $("#brand").val();
-var model = $("#model").val();
-var os = $("#os").val();
-var screensize = $("#screensize").val();
-var image = $("#image").val();
-var requestData = {
-    brand: brand,
-    model: model,
-    os: os,
-    screensize: parseFloat(screensize),
-    image: image
-};
+$("#btn").click(function(){
 $.ajax({
     url: "https://wt.ops.labs.vu.nl/api22/9470b950",
     method: "GET",
-    data: JSON.stringify(requestData),
     dataType: "json",
+    success: function(data,status){
+        console.log(data);
+        data.forEach(function(dt){
+            $("#tdata").append("<tr>"+
+            "<td>"+dt.brand+"</td>"+
+            "<td>"+dt.model+"</td>"+
+            "<td>"+dt.os+"</td>"+
+            "<td>"+dt.screensize+"</td>"+
+            "<td><img src="+dt.image+" width= '100'></img></td>"
+        
+            +"</tr>"
+            );
+        
+        })
+    
+    }
 });
-console.log(requestData);
-function addRow(event){
-   //event.preventDefault();
-   /*
-    var brand= data.brand;
-    var model=data.model;
-    var os=data.os;
-    var screensize=data.screensize;
-    var image=data.image;
-    */
-    tbodyEl.innerHTML += `
-        <tr>
-            <td>${requestData[0]}</td>
-            <td>${requestData[1]}</td>
-            <td>${requestData[2]}</td>
-            <td>${requestData[3]}</td>
-            <td>${requestData[4]}</td>
-        </tr>
-    `
-    ;}
-formEl.addEventListener("submit", addRow);
 });
+});
+
 
 
 //https://stackoverflow.com/questions/3160277/jquery-table-sort
