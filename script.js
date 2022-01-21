@@ -34,30 +34,32 @@ $("button.reset").click(function(){
 //task 3
 const formEl = document.querySelector("form");
 const tbodyEl= document.querySelector("tbody");
+let requestData= [$("#brand").val(), $("#model").val(),$("#os").val(),$("#image").val(),$("#screensize").val()];
 $.ajax({
     url: "https://wt.ops.labs.vu.nl/api22/9470b950",
     method: "GET",
-    data: brand, model, os, screensize, image,
+    data: requestData,
     dataType: "json"
 });
 function addRow(event){
-    event.preventDefault();
-    const brand= data.brand;
-    const model=data.model;
-    const os=data.os;
-    const screensize=data.screensize;
-    const image=data.image;
-    
+   //event.preventDefault();
+   /*
+    var brand= data.brand;
+    var model=data.model;
+    var os=data.os;
+    var screensize=data.screensize;
+    var image=data.image;
+    */
     tbodyEl.innerHTML += `
         <tr>
-            <td>${brand}</td>
-            <td>${model}</td>
-            <td>${os}</td>
-            <td>${screensize}</td>
-            <td>${image}</td>
+            <td>${requestData[0]}</td>
+            <td>${requestData[1]}</td>
+            <td>${requestData[2]}</td>
+            <td>${requestData[4]}</td>
+            <td>${requestData[3]}</td>
         </tr>
     `
-}
+    ;}
 formEl.addEventListener("submit", addRow);
 });
 
