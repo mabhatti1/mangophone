@@ -86,12 +86,8 @@ $("#my_form").submit(function(event) {
                     "<td>"+data.os+"</td>"+
                     "<td>"+data.screensize+"</td>"+
                     "<td><img src="+data.image+" width= '100'></img></td>"
-                
                     +"</tr>"
                     );
-                
-                
-            
             }
         });
         }
