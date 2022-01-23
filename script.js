@@ -31,6 +31,7 @@ $("button.reset").click(function(){
         dataType: "json"
      })
     })
+    
 //task 3
 $.ajax({
     url: "https://wt.ops.labs.vu.nl/api22/9470b950",
@@ -48,33 +49,54 @@ $.ajax({
         
             +"</tr>"
             );
-        
         })
-    
     }
 });
-/*
+
 //task 4
-$("#my_form").submit(function(e) {
-
-    e.preventDefault(); // avoid to execute the actual submit of the form.
-
+$("#my_form").submit(function(event) {
+    event.preventDefault(); 
+    
     var form = $(this);
     var actionUrl = form.attr('action');
     
     $.ajax({
-        type: "POST",
         url: actionUrl,
-        data: form.serialize(), // serializes the form's elements.
+        method: "POST",
+        data: form.serialize(),
         success: function(data)
         {
-          console.log(data); 
+          console.log(data);
+          for(key in data) {
+            if(data.hasOwnProperty(key)) {
+                var value = data[key];  
+                console.log(value);
+            }
         }
-    });
-    
+        $.ajax({
+            url: value,
+            method: "GET",
+            dataType: "json",
+            success: function(data,status){
+                console.log(data);
+              
+                    $("#tdata").append("<tr>"+
+                    "<td>"+data.brand+"</td>"+
+                    "<td>"+data.model+"</td>"+
+                    "<td>"+data.os+"</td>"+
+                    "<td>"+data.screensize+"</td>"+
+                    "<td><img src="+data.image+" width= '100'></img></td>"
+                
+                    +"</tr>"
+                    );
+                
+                
+            
+            }
+        });
+        }
+    }); 
 });
-*/
-
 });
 
 
