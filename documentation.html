@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <h1>Web API</h1>
+    <p>The Mango Phone web API endpoints return JSON metadata about phones; brand, model, os, screensize and image of the requested phone. </p>
+    <p>The base adress of the web API is https://..... The API also provides the following end point:  </p>
+    <h2>Requests</h2>
+    <p>The Mango Phone web API is a RESTful API, this means that the API is based on REST principles. The API provides a CRUD(Create, Retrieve, Update and Delete) interface, with the following methods: </p>
+    <table>
+        <tr>
+            <th>method</th>
+            <th>action</th>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>Retrieves recourses</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>Creates recources</td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td>Changes and or replaces recourses or collections</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>Deletes recources</td>
+        </tr>
+    </table>
+    <h2>Response Status Codes</h2>
+    <table>
+        <tr>
+            <th>Status Code</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>OK - The request has succeeded. The client can read the result of the request in the body and the headers of the response.</td>
+        </tr>
+        <tr>
+            <td>201</td>
+            <td>Created - The request has been fulfilled and resulted in a new resource being created.</td>
+        </tr>
+        <tr>
+            <td>204</td>
+            <td>No Content - The request has succeeded but returns no message body.</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>Bad Request - The request could not be understood by the server due to malformed syntax. The message body will contain more information</td>
+        </tr>
+        <tr>
+            <td>404</td>
+            <td>Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.</td>
+        </tr>
+    </table>
+</html>
