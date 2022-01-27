@@ -56,6 +56,31 @@ app.get("/phones", function(req,res){
         }
     });
 });
+
+app.post('/phones/:id', function(req,res){
+
+    const {id} = req.params;
+    const {brand} = req.body;
+    const {model} = req.body;
+    const {os} = req.body;
+    const {screensize} = req.body;
+    const {image} = req.body;
+
+    if (!brand || !model || !os || !screensize || !image){
+        res.status(400).send({message: 'Missing input!'})
+    }
+
+    res.json({
+        brand: `${brand} ${id}`,
+        model: `${model} ${id}`,
+        os: `${os} ${id}`,
+        screensize: `${screensize} ${id}`,
+        image: `${image} ${id}`,
+
+    })
+
+});
+
 // ###############################################################################
 
 // This example route responds to http://localhost:3000/hello with an example JSON object.
@@ -85,6 +110,7 @@ app.get('/db-example', function(req, res) {
             res.json(rows);
         }
     	// TODO: set the appropriate HTTP response headers and HTTP response codes here.
+    
 
     	// # Return db response as JSON
     	return res.json(rows)
