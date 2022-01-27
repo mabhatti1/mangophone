@@ -91,6 +91,26 @@ app.get("/phones/:id", function(req,res){
         }
     });
 });
+app.put("/phones/:id", function(req,res){
+	const {id} = req.params;
+    const {brand} = req.body;
+    const {model} = req.body;
+    const {os} = req.body;
+    const {screensize} = req.body;
+    const {image} = req.body;
+
+	db.updateOne(`${id}`, brand, model, os, screensize, image, function(err, result){
+		if(err){
+			res.status(400).send(err);
+		}
+		else if(result.n===0){
+			res.status(404).send(err);
+		}
+		else{
+			res.sendStatus(204);
+		}
+	});
+});
 // ###############################################################################
 
 // This example route responds to http://localhost:3000/hello with an example JSON object.
