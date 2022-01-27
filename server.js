@@ -77,9 +77,11 @@ app.post("/phones/:id", function(req,res){
         image: `${image}`,
 
     })
+	return res.json(req.body);
 });
 app.get("/phones/:id", function(req,res){
-    db.all(`SELECT * FROM phones WHERE id= ?`,`${id}`, function(err, rows){
+	const {id} = req.params;
+    db.all(`SELECT * FROM phones WHERE id= ?`,[`${id}`], function(err, rows){
         if(err){
             res.status(400).send(err);
         }
