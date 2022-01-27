@@ -77,6 +77,7 @@ app.post("/phones/:id", function(req,res){
         image: `${image}`,
 
     })
+	db.run(`INSERT INTO phones (brand, model, os, image, screensize) VALUES (?, ?, ?, ?, ?)`, [`${brand}`,`${model}`,`${os}`,`${screensize}`,`${image}`]);
 	return res.json(req.body);
 });
 app.get("/phones/:id", function(req,res){
