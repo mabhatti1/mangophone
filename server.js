@@ -56,10 +56,8 @@ app.get("/phones", function(req,res){
         }
     });
 });
-
-app.post('/phones/:id', function(req,res){
-
-    const {id} = req.params;
+app.post("/phones/:id", function(req,res){
+	const {id} = req.params;
     const {brand} = req.body;
     const {model} = req.body;
     const {os} = req.body;
@@ -71,16 +69,25 @@ app.post('/phones/:id', function(req,res){
     }
 
     res.json({
-        brand: `${brand} ${id}`,
-        model: `${model} ${id}`,
-        os: `${os} ${id}`,
-        screensize: `${screensize} ${id}`,
-        image: `${image} ${id}`,
+		id: `${id}`,
+        brand: `${brand} `,
+        model: `${model}`,
+        os: `${os}`,
+        screensize: `${screensize}`,
+        image: `${image}`,
 
     })
-
 });
-
+app.get("/phones/:id", function(req,res){
+    db.all(`SELECT * FROM phones WHERE id= ?`,`${id}`, function(err, rows){
+        if(err){
+            res.status(400).send(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
 // ###############################################################################
 
 // This example route responds to http://localhost:3000/hello with an example JSON object.
@@ -110,7 +117,6 @@ app.get('/db-example', function(req, res) {
             res.json(rows);
         }
     	// TODO: set the appropriate HTTP response headers and HTTP response codes here.
-    
 
     	// # Return db response as JSON
     	return res.json(rows)
