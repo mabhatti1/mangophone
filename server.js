@@ -77,11 +77,12 @@ app.post("/phones/:id", function(req,res){
         image: `${image}`,
 
     })
-	db.run(`INSERT INTO phones (brand, model, os, image, screensize) VALUES (?, ?, ?, ?, ?)`, [`${brand}`,`${model}`,`${os}`,`${screensize}`,`${image}`]);
+	db.run(`INSERT INTO phones (brand, model, os, screensize, image) VALUES (?, ?, ?, ?, ?)`, [`${brand}`,`${model}`,`${os}`,`${screensize}`,`${image}`]);
 	return res.json(req.body);
 });
 app.get("/phones/:id", function(req,res){
-	const {id} = req.params;
+    const {id} = req.params;
+	
     db.all(`SELECT * FROM phones WHERE id= ?`,[`${id}`], function(err, rows){
         if(err){
             res.status(400).send(err);
@@ -92,25 +93,21 @@ app.get("/phones/:id", function(req,res){
     });
 });
 app.put("/phones/:id", function(req,res){
-	const {id} = req.params;
+
+    const {id} = req.params;
     const {brand} = req.body;
     const {model} = req.body;
     const {os} = req.body;
     const {screensize} = req.body;
     const {image} = req.body;
-
-	db.updateOne(`${id}`, brand, model, os, screensize, image, function(err, result){
-		if(err){
-			res.status(400).send(err);
-		}
-		else if(result.n===0){
-			res.status(404).send(err);
-		}
-		else{
-			res.sendStatus(204);
-		}
-	});
+    
+    db.all(`SELECT * FROM phones WHERE id= ?`,[`${id}`], function(err, rows){
+        db.run(`INSERT INTO phones (brand, model, os, screensize, image) VALUES (?, ?, ?, ?, ?)`, 
+        [`${brand}`,`${model}`,`${os}`,`${screensize}`,`${image}`]);
+    });
+    return res.json(req.body);
 });
+	
 // ###############################################################################
 
 // This example route responds to http://localhost:3000/hello with an example JSON object.
